@@ -18,12 +18,19 @@ function App() {
   return (
     <div>
       {isLoading ? (
-        <strong>Loading...</strong>
+        <h1>Loading...</h1>
       ) : (
         <div>
           {movieList.map((movie) => (
             <div key={movie.id}>
               <img src={movie.medium_cover_image} />
+              <h2>{movie.title}</h2>
+              <p>{movie.summary}</p>
+              <ul>
+                {movie.genres.map((g) => (
+                  <li key={g}>{g}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
